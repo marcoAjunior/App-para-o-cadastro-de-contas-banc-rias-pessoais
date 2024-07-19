@@ -22,16 +22,11 @@ export class BankListComponent implements OnInit {
   }
 
   searchBank(): void {
-    // Adiciona log para depuração
-    console.log('Código de banco buscado:', this.searchCode);
-    console.log('Lista de Bancos:', this.banks);
-
     // Converte searchCode para número, se necessário
     const searchCodeNumber = Number(this.searchCode);
 
     // Filtra a lista de bancos
     this.foundBanks = this.banks.filter(bank => bank.code === searchCodeNumber);
-    console.log('Bancos encontrados:', this.foundBanks);
 
     if (this.foundBanks.length === 0) {
       Swal.fire({
