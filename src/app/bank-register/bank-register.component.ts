@@ -5,7 +5,7 @@ import { AccountService } from '../services/account.service';
 @Component({
   selector: 'app-bank-register',
   templateUrl: './bank-register.component.html',
-  // styleUrls: ['./bank-register.component.css']
+  styleUrls: ['./bank-register.component.scss']
 })
 export class BankRegisterComponent implements OnInit {
   bank: any;
@@ -25,13 +25,16 @@ export class BankRegisterComponent implements OnInit {
   }
 
   registerAccount(): void {
-  const account = {
-    bankCode: this.bank.code,
-    agency: this.agency,
-    accountNumber: this.accountNumber
-  };
-  this.accountService.addAccount(account);
-  this.router.navigate(['/home']);
-}
+    const account = {
+      bankCode: this.bank.code,
+      agency: this.agency,
+      accountNumber: this.accountNumber
+    };
+    this.accountService.addAccount(account);
+    this.router.navigate(['/home']);
+  }
 
+  navigateBack(): void {
+    this.router.navigate(['/home']);
+  }
 }

@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  // styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
   accounts: any[] = [];
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   }
 
   // Método para redirecionar para a página de cadastro
-  navigateToRegister(): void {
+  navigateToBankRegister(): void {
     this.router.navigate(['/bank-register']);
   }
 }

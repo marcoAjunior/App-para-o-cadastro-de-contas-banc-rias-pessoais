@@ -1,11 +1,18 @@
-<div>
+<div class="bank-list-container">
+  <h1>Selecione um Banco</h1>
+
+  <div class="search-container">
     <label for="searchCode">Código do Banco:</label>
-    <input type="text" id="searchCode" [(ngModel)]="searchCode">
-    <button (click)="searchBank()">Buscar</button>
+    <input type="text" id="searchCode" [(ngModel)]="searchCode" placeholder="Digite o código do banco">
+    <button class="btn-search" (click)="searchBank()">Buscar</button>
   </div>
-  <ul>
-    <li *ngFor="let bank of banks" (click)="selectBank(bank)">
-      {{ bank.name }} ({{ bank.code }})
+
+  <ul *ngIf="banks.length > 0" class="banks-list">
+    <li *ngFor="let bank of banks" (click)="selectBank(bank)" class="bank-item">
+      <span class="bank-name">{{ bank.name }}</span>
+      <span class="bank-code">Código: {{ bank.code }}</span>
     </li>
   </ul>
-  
+
+  <p *ngIf="banks.length === 0" class="no-banks">Nenhum banco encontrado</p>
+</div>

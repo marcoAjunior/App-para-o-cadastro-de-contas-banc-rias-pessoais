@@ -1,0 +1,105 @@
+// Variáveis de cor
+$primary-color: #4CAF50; // Cor verde
+$background-color: #f4f4f4; // Cor de fundo
+$text-color: #333; // Cor do texto
+$button-hover-color: darken($primary-color, 10%); // Cor de hover do botão
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  .page-title {
+    text-align: center;
+    color: $primary-color;
+    margin-bottom: 20px;
+  }
+
+  .registration-form {
+    display: flex;
+    flex-direction: column;
+    
+    .form-group {
+      margin-bottom: 15px;
+      
+      label {
+        display: block;
+        font-weight: bold;
+        color: $text-color;
+        margin-bottom: 5px;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+    }
+
+    .submit-button {
+      background-color: $primary-color;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $button-hover-color;
+      }
+    }
+  }
+
+  .back-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ddd;
+    color: $text-color;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #ccc;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+
+    .registration-form {
+      .form-group {
+        margin-bottom: 10px;
+        
+        label {
+          font-size: 14px;
+        }
+
+        input {
+          font-size: 14px;
+        }
+      }
+
+      .submit-button {
+        font-size: 14px;
+      }
+
+      .back-button {
+        font-size: 14px;
+      }
+    }
+  }
+}

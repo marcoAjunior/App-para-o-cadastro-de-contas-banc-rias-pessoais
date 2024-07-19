@@ -1,0 +1,99 @@
+// Defina a cor principal de verde
+$primary-green: #4caf50; // Verde padrão do Material Design
+
+// Estilos gerais para o container da lista de bancos
+.bank-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+
+  h1 {
+    color: $primary-green;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+
+  .search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+
+    label {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    input {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 10px;
+    }
+
+    .btn-search {
+      background-color: $primary-green;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken($primary-green, 10%);
+      }
+    }
+  }
+
+  .banks-list {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    list-style: none;
+    padding: 0;
+
+    .bank-item {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #f1f1f1;
+      }
+
+      .bank-name {
+        display: block;
+        font-weight: bold;
+      }
+
+      .bank-code {
+        display: block;
+        color: #666;
+      }
+    }
+
+    .bank-item:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .no-banks {
+    color: #888;
+    font-size: 16px;
+  }
+}
