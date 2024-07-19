@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AccountService } from '../services/account.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-bank-register',
@@ -25,13 +26,35 @@ export class BankRegisterComponent implements OnInit {
   }
 
   registerAccount(): void {
+    // Verifica se os campos estão preenchidos
+    if (!this.agency || !this.accountNumber) {
+      Swal.fire({
+        title: 'Campos Obrigatórios',
+        text: 'Por favor, preencha todos os campos obrigatórios.',
+        icon: 'warning',
+        confirmButtonText: 'OK'
+      });
+      return;
+    }
+
+    // Adiciona a conta
     const account = {
       bankCode: this.bank.code,
       agency: this.agency,
       accountNumber: this.accountNumber
     };
     this.accountService.addAccount(account);
-    this.router.navigate(['/home']);
+
+    // Exibe alerta de sucesso
+    Swal.fire({
+      title: 'Cadastro Realizado',
+      text: 'A conta foi cadastrada com sucesso!',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    }).then(() => {
+      // Redireciona para a página inicial após o alerta ser fechado
+      this.router.navigate(['/home']);
+    });
   }
 
   navigateBack(): void {

@@ -7,12 +7,21 @@
     <button class="btn-search" (click)="searchBank()">Buscar</button>
   </div>
 
-  <ul *ngIf="banks.length > 0" class="banks-list">
+  <!-- Mostrar todos os bancos quando a busca não for feita ou quando não há pesquisa -->
+  <ul *ngIf="searchCode.length === 0 || foundBanks.length === 0" class="banks-list">
     <li *ngFor="let bank of banks" (click)="selectBank(bank)" class="bank-item">
       <span class="bank-name">{{ bank.name }}</span>
       <span class="bank-code">Código: {{ bank.code }}</span>
     </li>
   </ul>
 
-  <p *ngIf="banks.length === 0" class="no-banks">Nenhum banco encontrado</p>
+  <!-- Mostrar apenas os bancos encontrados quando há uma busca -->
+  <ul *ngIf="searchCode.length > 0 && foundBanks.length > 0" class="banks-list">
+    <li *ngFor="let bank of foundBanks" (click)="selectBank(bank)" class="bank-item">
+      <span class="bank-name">{{ bank.name }}</span>
+      <span class="bank-code">Código: {{ bank.code }}</span>
+    </li>
+  </ul>
+
+  <p *ngIf="searchCode.length > 0 && foundBanks.length === 0" class="no-banks">Nenhum banco encontrado</p>
 </div>
