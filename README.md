@@ -1,27 +1,48 @@
-# TesteDesenvolvedorAbas
+# Cadastro de Contas Bancárias
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.1.
+## Descrição
 
-## Development server
+Este é um projeto de cadastro de contas bancárias pessoais, desenvolvido utilizando Angular para o front-end e `localStorage` para o armazenamento dos dados. A aplicação permite que os usuários cadastrem novas contas bancárias, visualizem uma lista de bancos disponíveis e filtrem os bancos por código.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologias Utilizadas
 
-## Code scaffolding
+- **Angular**
+  - Framework para desenvolvimento de aplicações web front-end.
+  - Utilizado para implementar as páginas e componentes, roteamento, e estilização responsiva.
+  - Exemplos:
+    - `home.component.html`: Página inicial da aplicação.
+    - `bank-list.component.html`: Página de listagem de bancos.
+    - `bank-register.component.html`: Página de cadastro de contas bancárias.
+    - `bank.service.ts`: Serviço para comunicação com o armazenamento local (`localStorage`).
+    - `account.service.ts`: Serviço para comunicação com o armazenamento local (`localStorage`).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **localStorage**
+  - Armazenamento web que permite salvar dados no navegador do usuário de forma persistente.
+  - Utilizado no front-end para armazenamento de dados.
+  - Exemplos:
+    - `account.service.ts`: Serviço para adicionar, remover e consultar contas bancárias no `localStorage`.
+    - `bank.service.ts`: Serviço para gerenciar os dados dos bancos no `localStorage`.
 
-## Build
+## Funcionalidades
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Cadastro de Contas Bancárias**: Permite que o usuário cadastre novas contas bancárias, inserindo a agência e o número da conta.
+- **Listagem de Bancos**: Exibe uma lista de bancos disponíveis com a opção de filtragem por código do banco.
+- **Persistência de Dados**: Utiliza `localStorage` para armazenar as contas bancárias cadastradas.
 
-## Running unit tests
+## Instalação
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para rodar o projeto localmente, siga os passos abaixo:
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Clone o repositório:
+   ```sh
+   git clone https://github.com/marcoAjunior/App-para-o-cadastro-de-contas-banc-rias-pessoais
+   cd App-para-o-cadastro-de-contas-banc-rias-pessoais
+2. Instale as dependências:
+   ```sh
+   npm install
+3. Rode a aplicação:
+    ```sh
+    ng serve
+3. Acesse a aplicação no navegador:
+    ```sh
+    http://localhost:4200
