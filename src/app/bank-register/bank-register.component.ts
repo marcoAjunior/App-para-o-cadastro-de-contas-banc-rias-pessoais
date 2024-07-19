@@ -25,12 +25,13 @@ export class BankRegisterComponent implements OnInit {
   }
 
   registerAccount(): void {
-    const account = {
-      bankCode: this.bank.code,
-      agency: this.agency,
-      accountNumber: this.accountNumber
-    };
-    this.accountService.addAccount(account);
-    this.router.navigate(['/']);
-  }
+  const account = {
+    bankCode: this.bank.code,
+    agency: this.agency,
+    accountNumber: this.accountNumber
+  };
+  this.accountService.addAccount(account);
+  this.router.navigate(['/home']);
+}
+
 }

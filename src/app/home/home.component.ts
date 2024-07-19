@@ -12,8 +12,12 @@ export class HomeComponent implements OnInit {
 
   constructor(private accountService: AccountService, private router: Router) { }
 
-  ngOnInit(): void {
-    this.loadAccounts();
+  ngOnInit() {
+    // Recuperar dados do localStorage
+    const storedAccounts = localStorage.getItem('accounts');
+    if (storedAccounts) {
+      this.accounts = JSON.parse(storedAccounts);
+    }
   }
 
   loadAccounts(): void {
@@ -22,5 +26,10 @@ export class HomeComponent implements OnInit {
 
   navigateToBankList(): void {
     this.router.navigate(['/bank-list']);
+  }
+
+  // Método para redirecionar para a página de cadastro
+  navigateToRegister(): void {
+    this.router.navigate(['/bank-register']);
   }
 }

@@ -5,7 +5,8 @@ import { BankListComponent } from './bank-list/bank-list.component';
 import { BankRegisterComponent } from './bank-register/bank-register.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
   { path: 'bank-list', component: BankListComponent },
   { path: 'bank-register', component: BankRegisterComponent }
 ];

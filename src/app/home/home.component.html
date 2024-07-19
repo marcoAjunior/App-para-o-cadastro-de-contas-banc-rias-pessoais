@@ -1,11 +1,14 @@
-<div>
-  <button (click)="navigateToBankList()">Cadastrar Nova Conta</button>
+<!-- Botão para cadastrar novas contas -->
+<button (click)="navigateToRegister()">Cadastrar Nova Conta</button>
+
+<!-- Lista de contas cadastradas -->
+<div *ngIf="accounts.length > 0">
+  <ul>
+    <li *ngFor="let account of accounts">
+      Banco: {{ account.bankCode }} - Agência: {{ account.agency }} - Conta: {{ account.accountNumber }}
+    </li>
+  </ul>
 </div>
 <div *ngIf="accounts.length === 0">
-  <p>Não existem contas cadastradas.</p>
+  <p>Nenhuma conta cadastrada.</p>
 </div>
-<ul>
-  <li *ngFor="let account of accounts">
-    {{ account.bank.name }} - {{ account.accountNumber }} - {{ account.accountHolder }}
-  </li>
-</ul> 
