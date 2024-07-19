@@ -1,0 +1,17 @@
+<div *ngIf="bank">
+    <h2>Cadastro de Conta para {{ bank.name }}</h2>
+    <p><strong>Código:</strong> {{ bank.code }}</p>
+    <p><strong>ISPB:</strong> {{ bank.ispb }}</p>
+    <p><strong>Nome Completo:</strong> {{ bank.fullName }}</p>
+  
+    <form (ngSubmit)="registerAccount()">
+      <label for="agency">Agência:</label>
+      <input type="text" id="agency" [(ngModel)]="agency" name="agency" required>
+  
+      <label for="accountNumber">Conta:</label>
+      <input type="text" id="accountNumber" [(ngModel)]="accountNumber" name="accountNumber" required>
+  
+      <button type="submit">Cadastrar Conta</button>
+    </form>
+  </div>
+  

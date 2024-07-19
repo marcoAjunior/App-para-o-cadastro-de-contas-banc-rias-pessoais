@@ -1,0 +1,11 @@
+<div>
+    <label for="searchCode">Código do Banco:</label>
+    <input type="text" id="searchCode" [(ngModel)]="searchCode">
+    <button (click)="searchBank()">Buscar</button>
+  </div>
+  <ul>
+    <li *ngFor="let bank of banks" (click)="selectBank(bank)">
+      {{ bank.name }} ({{ bank.code }})
+    </li>
+  </ul>
+  
