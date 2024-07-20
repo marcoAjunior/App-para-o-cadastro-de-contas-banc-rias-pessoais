@@ -5,7 +5,7 @@
   <button class="btn-register" (click)="navigateToBankRegister()">Cadastrar Nova Conta</button>
 
   <!-- Lista de contas -->
-  <div *ngIf="accounts.length > 0" class="accounts-list">
+  <div *ngIf="accounts.length > 0; else noAccounts" class="accounts-list">
     <h2>Contas Cadastradas</h2>
     <ul>
       <li *ngFor="let account of accounts">
@@ -15,4 +15,9 @@
       </li>
     </ul>
   </div>
+
+  <!-- Template de mensagem de erro -->
+  <ng-template #noAccounts>
+    <p class="no-accounts-message">Não tem contas cadastradas</p>
+  </ng-template>
 </div>

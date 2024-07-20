@@ -37,6 +37,17 @@ export class BankRegisterComponent implements OnInit {
       return;
     }
 
+    // Verifica se a agência e o número da conta têm o número correto de dígitos
+    if (this.agency.length !== 4 || this.accountNumber.length !== 8) {
+      Swal.fire({
+        title: 'Erro',
+        text: 'A Agência deve ter 4 dígitos e o Número da Conta deve ter 8 dígitos.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+      return;
+    }
+
     // Adiciona a conta
     const account = {
       bankCode: this.bank.code,
